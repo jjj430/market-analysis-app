@@ -1,0 +1,26 @@
+body {
+	background-color: #CD9B9B;
+}
+
+table {
+   border: 2px solid #021a40;
+}
+
+#image-container {display: flex; justify-content: center;}
+    
+img {
+	width:200px;
+	height: 200px;
+	border:5px solid #021a40;
+	margin: 2px;
+}
+	
+h2 {
+	text-align:center;
+}
+
+h3 {
+	text-align:center;
+}
+
+	
