@@ -71,32 +71,32 @@ function showTable() {
 }
 
 function recordClick(event) {
-  var clickedImage = event.target;
+	var clickedImage = event.target;
   // console.log(clickedImage);
-   //totalClicks++;
+	totalClicks++;
    
-  console.log(totalClicks + "Total Clicks");
-     
-	  //totalClicks++;
+	console.log(totalClicks + " Total Clicks");
   
 	if (totalClicks < 15){
 		getThreeImages();
-		totalClicks++;
+		//totalClicks++;  makes the total off by one
 		//progress line
-	  progress.innerHTML=""; //clears progress line
-      var progressVotes = document.createElement("h3");  //create element
-	  var newText = document.createTextNode("Progress "+totalClicks+" out of 15");  //give it content
-	  progressVotes.appendChild(newText);
-	  document.getElementById("progress").appendChild(progressVotes);
-	  //progress.innerHTML="";	 
+		progress.innerHTML=""; //clears progress line
+		var progressVotes = document.createElement("h3");  //create element
+		var newText = document.createTextNode("Progress "+totalClicks+" out of 15");  //give it content
+		progressVotes.appendChild(newText);
+		document.getElementById("progress").appendChild(progressVotes);
+		//progress.innerHTML="";	 
 	}
 	else {
 		// show button
-	document.getElementById("buttonContainer").style.visibility = "visible";
+		progress.innerHTML=""; //clears progress line
+		var progressVotes = document.createElement("h3");  //create element
+		var newText = document.createTextNode("Progress "+totalClicks+" out of 15");  //give it content
+		progressVotes.appendChild(newText);
+		document.getElementById("progress").appendChild(progressVotes);
+		document.getElementById("buttonContainer").style.visibility = "visible";
 	}
-	
-	
-
   
   var clickedImageSource = clickedImage.src;
 // console.log("Clicked SRC: "+clickedImageSource);
