@@ -1,4 +1,5 @@
 var totalClicks = 0;
+document.getElementById("buttonContainer").style.visibility = "hidden";
 
 var imageTracker = function (name, source) {
   this.imageSource = source;
@@ -60,6 +61,15 @@ function getThreeImages() {
   }
 }
 
+
+
+function showTable() {
+	for(var i=0; i<14; i++){	
+		var image = imageOptions[i];
+		image.addInfo();
+	 }	
+}
+
 function recordClick(event) {
   var clickedImage = event.target;
   // console.log(clickedImage);
@@ -69,10 +79,9 @@ function recordClick(event) {
      
 	  //totalClicks++;
   
-	if(totalClicks < 15){
+	if (totalClicks < 15){
 		getThreeImages();
 		totalClicks++;
-		
 		//progress line
 	  progress.innerHTML=""; //clears progress line
       var progressVotes = document.createElement("h3");  //create element
@@ -80,15 +89,14 @@ function recordClick(event) {
 	  progressVotes.appendChild(newText);
 	  document.getElementById("progress").appendChild(progressVotes);
 	  //progress.innerHTML="";	 
-		
-		}
-	else {
-		for(var i=0; i<14; i++){	
-		var image = imageOptions[i];
-		image.addInfo();
-	    }	
 	}
-  
+	else {
+		// show button
+	document.getElementById("buttonContainer").style.visibility = "visible";
+	}
+	
+	
+
   
   var clickedImageSource = clickedImage.src;
 // console.log("Clicked SRC: "+clickedImageSource);
