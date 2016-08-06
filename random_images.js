@@ -7,7 +7,7 @@ var imageTracker = function (name, source) {
   this.name = name;
 
   this.addInfo = function() {
-    var locationRow = document.createElement("tr");
+	var locationRow = document.createElement("tr");
     var newTable = document.createElement("td");
     newTable.innerText = this.name;
     locationRow.appendChild(newTable);
@@ -67,15 +67,15 @@ function showTable() {
 	for(var i=0; i<14; i++){	
 		var image = imageOptions[i];
 		image.addInfo();
-	 }	
+	}	
 }
 
 function recordClick(event) {
 	var clickedImage = event.target;
-  // console.log(clickedImage);
+	// console.log(clickedImage);
 	totalClicks++;
    
-	console.log(totalClicks + " Total Clicks");
+	//console.log(totalClicks + " Total Clicks");
   
 	if (totalClicks < 15){
 		getThreeImages();
@@ -98,9 +98,9 @@ function recordClick(event) {
 		document.getElementById("buttonContainer").style.visibility = "visible";
 	}
   
-  var clickedImageSource = clickedImage.src;
-// console.log("Clicked SRC: "+clickedImageSource);
-  for (var index = 0; index < imageOptions.length; index++) {
+	var clickedImageSource = clickedImage.src;
+	// console.log("Clicked SRC: "+clickedImageSource);
+	for (var index = 0; index < imageOptions.length; index++) {
     //console.log("  Compare to: "+imageOptions[index].imageSource);
     if (clickedImageSource.indexOf(imageOptions[index].imageSource) >= 0) {
       imageOptions[index].upVotes++;
@@ -108,8 +108,6 @@ function recordClick(event) {
     } // if (clickedImageSource.indexOf(imageOptions[index].imageSource) >= 0)
   } // for (var index = 0; index < imageOptions.length; index++)
 }
-
-
 
 getThreeImages();
 
