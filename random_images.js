@@ -5,7 +5,7 @@ var imageTracker = function (name, source) {
   this.y = 0;
   this.label = name;
 
-//  this.addInfo = function() {
+//      this.addInfo = function() {
 ////    var locationRow = document.createElement("tr");
 ////    var newTable = document.createElement("td");
 ////    newTable.innerText = this.name;
@@ -62,12 +62,11 @@ function getThreeImages() {
 
 function recordClick(event) {
   var clickedImage = event.target;
-    totalClicks++;
+  totalClicks++;
 	
   if (totalClicks < 15){
     getThreeImages();
-    
-		
+    	
     //progress line
     progress.innerHTML=""; //clears progress line
     var progressVotes = document.createElement("h3");  //create element
@@ -76,27 +75,20 @@ function recordClick(event) {
     document.getElementById("progress").appendChild(progressVotes);
     //progress.innerHTML="";	 
 		
-    } // if totalClicks 
+    } // if totalClicks is 15 or greater
 	else {
-//		for(var i=0; i<14; i++){	
-//		var image = imageOptions[i];
-//		image.addInfo();
       initializeChart();
-	    }	
-	
-  
-  
+	}	
+	 
   var clickedImageSource = clickedImage.src;
-// console.log("Clicked SRC: "+clickedImageSource);
+  // console.log("Clicked SRC: "+clickedImageSource);
   for (var index = 0; index < imageOptions.length; index++) {
-    //console.log("  Compare to: "+imageOptions[index].imageSource);
+  //console.log("  Compare to: "+imageOptions[index].imageSource);
     if (clickedImageSource.indexOf(imageOptions[index].imageSource) >= 0) {
       imageOptions[index].y++;
       //console.log("    Clicked Item: "+imageOptions[index].name);
     } // if (clickedImageSource.indexOf(imageOptions[index].imageSource) >= 0)
   } // for (var index = 0; index < imageOptions.length; index++)
 }
-
-
 
 getThreeImages();
